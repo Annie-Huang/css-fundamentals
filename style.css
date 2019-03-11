@@ -1,0 +1,103 @@
+/*attribte selector*/
+[data-name='name'] {
+    color: blue;
+}
+
+/*
+element = 0,0,1
+classes = 0,1,0
+ids     = 1,0,1
+
+inline style over ids
+!important thump everything.
+ */
+
+/**********************************************************/
+/*<li class="home" id="home" style="color: purple">*/
+/*div ul li {*/
+    /*color: blue;*/
+    /*!*color: blue !important;*!*/
+/*}*/
+
+/*.home {*/
+    /*color: red;*/
+/*}*/
+/*#home {*/
+    /*color: gray;*/
+/*}*/
+
+
+
+/**********************************************************/
+/* will show blue because blue is below red with the same specitifity */
+/*<li class="home--two home">*/
+/*It is the order in the style.css file matters. it will still show blue*/
+
+/*.home {*/
+    /*color: red;*/
+/*}*/
+/*.home--two {*/
+    /*color: blue;*/
+/*}*/
+
+
+
+/**********************************************************/
+/*<li class="home">*/
+
+ul {
+    color: blue;
+}
+li {
+    color: red;
+}
+.home {
+    /*color: inherit; // inherit of the parents, which is ul, so will show blue*/
+
+    /*initial of the brower default style sheet, in this case it will be black. initial is not supported in IE but supported for all the other browsers*/
+    color: initial;
+}
+
+
+.box {
+    background: blue;
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    border: 10px solid green;
+    margin: 10px;
+    /*box-sizing: border-box;*/
+    /* content-box is only apply height and width for block element(default), if display is not other things, like inline (below), height and width will be ignore.*/
+    box-sizing: content-box;
+    display: inline;
+}
+
+
+h1 {
+    /*font-size: 30px;*/
+    /* % is calculate against the parent size, the parent size is default size 16px. So font-size will be 32px (you need to see this in the computed tag)  */
+    font-size: 200%;
+    /* em meaing go up to 2 times of the current font size. So it will be 30*2=60px */
+    /*padding: 2em;*/
+
+    /* rem meaning going up to 2 times of the default pixel, which is 16px. So 32px in total*/
+    padding: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
