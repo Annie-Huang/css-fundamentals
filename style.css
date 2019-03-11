@@ -45,18 +45,18 @@ inline style over ids
 /**********************************************************/
 /*<li class="home">*/
 
-ul {
-    color: blue;
-}
-li {
-    color: red;
-}
-.home {
-    /*color: inherit; // inherit of the parents, which is ul, so will show blue*/
+/*ul {*/
+    /*color: blue;*/
+/*}*/
+/*li {*/
+    /*color: red;*/
+/*}*/
+/*.home {*/
+    /*!*color: inherit; // inherit of the parents, which is ul, so will show blue*!*/
 
-    /*initial of the brower default style sheet, in this case it will be black. initial is not supported in IE but supported for all the other browsers*/
-    color: initial;
-}
+    /*!*initial of the brower default style sheet, in this case it will be black. initial is not supported in IE but supported for all the other browsers*!*/
+    /*color: initial;*/
+/*}*/
 
 
 .box {
@@ -73,31 +73,170 @@ li {
 }
 
 
-h1 {
-    /*font-size: 30px;*/
-    /* % is calculate against the parent size, the parent size is default size 16px. So font-size will be 32px (you need to see this in the computed tag)  */
-    font-size: 200%;
-    /* em meaing go up to 2 times of the current font size. So it will be 30*2=60px */
-    /*padding: 2em;*/
+/**********************************************************/
 
-    /* rem meaning going up to 2 times of the default pixel, which is 16px. So 32px in total*/
-    padding: 2rem;
+/*h1 {*/
+    /*!*font-size: 30px;*!*/
+    /*!* % is calculate against the parent size, the parent size is default size 16px. So font-size will be 32px (you need to see this in the computed tag)  *!*/
+    /*font-size: 200%;*/
+    /*!* em meaing go up to 2 times of the current font size. So it will be 30*2=60px *!*/
+    /*!*padding: 2em;*!*/
+
+    /*!* rem meaning going up to 2 times of the default pixel, which is 16px. So 32px in total*!*/
+    /*padding: 2rem;*/
+/*}*/
+
+
+/**********************************************************/
+/*h1 {*/
+    /*!*color: #ff0000;*!*/
+
+    /*!* red, green, blue *!*/
+    /*!*color: rgb(255,0,0);*!*/
+
+    /*!**/
+    /*Hue is this first one here and its degree on the color wheel from 0 to 360, 0 is red, 120 is green, and 240 is blue.*/
+    /*Saturation is the second one here and is a percentage value. 0 means a shade of gray and 100% is the full color.*/
+    /*Lightness is also percentage. 0 is black. 50% is neither light or dark. 100% is white.*/
+    /**!*/
+    /*color: hsl(0, 100%, 50%);*/
+    /*border: solid 1px;*/
+    /*background: #0000ff;*/
+/*}*/
+
+
+/**********************************************************/
+.content {
+    /*background: url("img/fog.jpg");*/
+    /*background: url("img/fog.jpg") center/cover no-repeat;*/
+    background: radial-gradient(crimson, skyblue) fixed;
+
+    /* The keyword cover will resize the background image to make sure the element is fully covered. */
+    /*background-size: cover;*/
 }
 
 
+/**********************************************************/
+/*h1 {*/
+    /*!* disappear slowly *!*/
+    /*!*opacity: 0;*!*/
+
+    /*!* disappear suddenly *!*/
+    /*!*visibility: hidden;*!*/
+
+    /*!* actually remove from the layer of the page *!*/
+    /*display: none;*/
+/*}*/
+
+/*h1.transition {*/
+    /*transition: 1s;*/
+    /*!*opacity: 1;*!*/
+/*}*/
+
+h1 {
+    /*font-size: 34px;*/
+    /*font-style: italic;*/
+    /*font-family: 'Open Sans', sans-serif;*/
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /*font-weight: 300;*/
+    font:italic 300 34px 'Open Sans',sans-serif;
+}
+
+.parent {
+    padding: 20px;
+    border: solid 2px blue;
+    position: relative;
+}
+.child {
+    padding: 20px;
+    background: red;
+    /*position: relative;*/
+    /*position: absolute;*/
+
+    /* fixed is good for situation like you need to keep the nevigation to stay on the top of the website. */
+    position: fixed;
+    top: 20px;
+}
+
+
+/*li a:hover {*/
+    /*color: red;*/
+/*}*/
+/*li:first-child a {*/
+    /*color: blue;*/
+/*}*/
+/*input:focus {*/
+    /*outline-color: green;*/
+/*}*/
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes */
+
+/**********************************************************/
+
+/*ul {*/
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+/*}*/
+/*@media (max-width: 700px) {*/
+    /*ul {*/
+        /*display: block;*/
+    /*}*/
+/*}*/
+
+/* below is the same as above */
+/*ul {*/
+    /*display: block;*/
+/*}*/
+/*!*@media (min-width: 700px) {*!*/
+/*@media (min-width: 700px) and (max-width: 1000px) {*/
+    /*ul {*/
+        /*display: flex;*/
+        /*justify-content: space-between;*/
+    /*}*/
+/*}*/
+
+/*
+min-height:
+max-height:
+orientation: portrait or landscape
+ */
 
 
 
+.logo {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: hsl(0,0%,90%);
+    font-size: 45px;
+    font-weight: 700;
+}
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+}
+.header--ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    width: 50%;
+    padding: 0;
+}
+.header--ul a{
+    color: hsl(0,0%,50%);
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+}
+.header--ul li:first-child a{
+    color: hsl(0,0%,90%);
 
-
-
-
-
-
-
-
-
-
-
-
-
+}
+@media (max-width: 900px) {
+    .headerContainer {
+        display: block;
+    }
+    .header--ul {
+        display: block;
+    }
+}
